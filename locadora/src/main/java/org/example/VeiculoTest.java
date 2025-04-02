@@ -1,17 +1,25 @@
 package org.example;
+import org.junit.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
 
 public class VeiculoTest {
-    public static void main(String[] args) {
-//erro no Test nn sei arrumar, mas acho q é so comletar a funçao
-        @Test
-        public static void testCalcularCusto(){
-            Veiculo uno = new Veiculo("uno",30);
-            System.out.println(uno.calcularCusto(10));
 
-        }
+    @Test
+    public void testecalcularcusto(){
+        Veiculo uno = new Veiculo("uno",30);
+        System.out.println(uno.calcularCusto(10));
+        assertEquals(270,uno.calcularCusto(10));
     }
+    @Test
+    public void testemulta(){
+        Veiculo test = new Veiculo("carro",10);
+        System.out.println(test.multa(5,1));
+        assertEquals(65,test.multa(5,1));
+    }
+
+
+
 }
 
 
