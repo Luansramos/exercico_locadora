@@ -24,6 +24,18 @@ public class Veiculo {
             return valor;
         }
     }
+    
+// teste para tentar fazer o metodo sem declarar variavel dentro da funçao
+    public double calcularValorDesconto(int dias) {
+        if (dia>=7){
+        return (this.valorDiaria * dias) * 0.10
+        }else{
+            return this.valorDiaria * dias
+        }
+    }
+
+
+    
     public double multa(int dias,int atraso){
         //fazer um if multiplicando valor por 0.1 para retirar o desconto
         double valor = calcularCusto(dias);
