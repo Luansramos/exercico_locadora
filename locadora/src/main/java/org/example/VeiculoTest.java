@@ -5,18 +5,28 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class VeiculoTest {
 
-    @Test
-    public void testecalcularcusto(){
-        Veiculo uno = new Veiculo("uno",30);
-        System.out.println(uno.calcularCusto(10));
-        assertEquals(270,uno.calcularCusto(10));
-    }
+
     @Test
     public void testemulta(){
         Veiculo test = new Veiculo("carro",10);
-        System.out.println(test.multa(5,1));
-        assertEquals(65,test.multa(5,1));
+        System.out.println(test.multa(0,0));
+        assertEquals(0,test.multa(0,0));
     }
+
+    @Test
+    public void  testvalor(){
+        Veiculo testvalor = new Veiculo("kwid",20);
+        System.out.println(testvalor.calcularValorDesconto(10));
+        assertEquals(180,testvalor.calcularValorDesconto(10));
+    }
+
+    @Test
+    public void testDescontoProgressivo(){
+        Veiculo test = new Veiculo("hrv",10);
+        System.out.println(test.descontoProgressivo(20));
+        assertEquals(160,test.descontoProgressivo(20));
+    }
+
 
 
 

@@ -6,40 +6,42 @@ public class Veiculo {
     String modelo;
     double valorDiaria;
 
-
     //contrutores
     public Veiculo(String modelo, double valorDiaria){
     this.modelo = modelo;
     this.valorDiaria = valorDiaria;
-
     }
 
-    //metodos
-    public double calcularCusto(int dias){
-        double valor = valorDiaria*dias;
-        if (dias>=7){
-            System.out.println("10 porcento de desconto aplicado, valor total: ");
-            return valor *= 0.9;
-        }else{
-            return valor;
-        }
-    }
-    
-// teste para tentar fazer o metodo sem declarar variavel dentro da funçao
     public double calcularValorDesconto(int dias) {
-        if (dia>=7){
-        return (this.valorDiaria * dias) * 0.10
-        }else{
-            return this.valorDiaria * dias
+        if (dias<0){
+            System.out.println("valor invalido");
+            return 0.0;
+        }else {
+            if (dias >=7){
+            return (this.valorDiaria * dias) * 0.90;
+            }else{
+                return this.valorDiaria * dias;
+            }
         }
     }
 
-
-    
     public double multa(int dias,int atraso){
         //fazer um if multiplicando valor por 0.1 para retirar o desconto
-        double valor = calcularCusto(dias);
+        double valor = calcularValorDesconto(dias);
         return valor + (atraso*valorDiaria)+(valor*0.1);
     }//          50    +          10       +    5
 
+    public double descontoProgressivo(int dias) {
+        //++
+        //++
+        if (dias >= 20) {
+            return (valorDiaria * dias) * 0.8;
+        } else if (dias >= 30) {
+            return (valorDiaria * dias) *0.7;
+        } else if (dias >= 40) {
+            return (valorDiaria * dias) *0.6;
+        }else {
+            return (valorDiaria * dias) *0.5;
+        }
+    }
 }
